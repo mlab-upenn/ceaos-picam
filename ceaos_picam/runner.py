@@ -22,6 +22,7 @@ if __name__ == "__main__":
         date_str = now.strftime("%m_%d_%Y__%H:%M")
         path = '/home/pi/Documents/Plant_Photos/%s.jpg' % date_str
         camera.set_path(path)
+        camera.annotate(date_str)
         captured = camera.capture()
         if captured == False:
             print("ERROR: Image capture failed")
