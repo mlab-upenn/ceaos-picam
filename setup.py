@@ -6,5 +6,8 @@ setup(
     packages=['ceaos_picam'],
     install_requires=[
         'pigpio',
+        'picamera',
+        'zmq',
+        'json'
     ],
 )
