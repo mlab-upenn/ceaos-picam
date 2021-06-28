@@ -12,9 +12,6 @@ if __name__ == "__main__":
 
     camera = Picam()
     camera.rotate(180)
-    camera.set_iso(100)
-    sleep(2)
-    camera.set_shutterspeed(40000)
 
     json_payload = {}
     while True:
