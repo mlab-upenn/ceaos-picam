@@ -26,9 +26,9 @@ if __name__ == "__main__":
             break
 
         json_payload = {
-            'sensor': 'Picam',
+            'action': 'recv_value',
             'cea-addr': 'farm1.env1.bed1.camera',
-            'payload': [camera.encode()]
+            'payload': {"image": camera.encode()}
         }
 
         socket.send_json(json_payload)
