@@ -8,7 +8,7 @@ import os
 if __name__ == "__main__":
     context = zmq.Context()
     socket = context.scoket(zmq.REQ)
-    socket.connect('tcp://localhost:23267')
+    socket.connect('tcp://10.103.105.181:23267')
 
     camera = Picam()
     camera.rotate(180)
@@ -25,13 +25,15 @@ if __name__ == "__main__":
             print("ERROR: Image capture failed")
             break
 
-        json_payload = {
-            'action': 'recv_value',
-            'cea-addr': 'farm1.env1.bed1.camera',
-            'payload': {"image": camera.encode()}
-        }
+        json_payload = json.dumps(
+                {
+                    'action': 'recv_value',
+                    'cea-addr': 'farm1.env1.bed1.camera',
+                    'payload': {"image": camera.encode()}
+                }
+        )
 
-        socket.send_json(json_payload)
+        socket.send_string(json_payload)
         message = socket.recv()
         message = json.loads(message)
         print("Received reply %s" % message)
