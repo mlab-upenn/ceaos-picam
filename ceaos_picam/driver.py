@@ -7,7 +7,7 @@ import os
 
 if __name__ == "__main__":
     context = zmq.Context()
-    socket = context.scoket(zmq.REQ)
+    socket = context.socket(zmq.REQ)
     socket.connect('tcp://localhost:23267')
 
     camera = Picam()
