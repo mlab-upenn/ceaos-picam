@@ -1,4 +1,4 @@
-from .picam import Picam
+from picam import Picam
 from time import sleep
 from datetime import datetime
 import zmq
