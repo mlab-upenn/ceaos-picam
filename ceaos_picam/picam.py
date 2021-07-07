@@ -36,6 +36,7 @@ class Picam():
     def encode(self):   #Encode image in 64-bit format
         with open(self.path, 'rb') as imagefile:
             self.byteform = base64.b64encode(imagefile.read())
+        return self.byteform
 
     def reset(self):    #Reset camera and delete locally stored image
         if os.path.exists(self.path):
