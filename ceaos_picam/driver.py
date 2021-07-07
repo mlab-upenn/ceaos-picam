@@ -28,7 +28,7 @@ if __name__ == "__main__":
         json_payload = {
             'action': 'recv_value',
             'cea-addr': 'farm1.env1.bed1.camera',
-            'payload': {"image": camera.encode()}
+            'payload': {"image": camera.encode().decode('ascii')}
         }
 
         socket.send_json(json_payload)
