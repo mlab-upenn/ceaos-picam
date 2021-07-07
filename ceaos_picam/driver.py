@@ -8,7 +8,7 @@ import os
 if __name__ == "__main__":
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
-    socket.connect('tcp://localhost:23267')
+    socket.connect('tcp://10.103.105.181:23267') # replace with your IP adress and port
 
     camera = Picam()
     camera.rotate(180)
