@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
         json_payload = {
             'action': 'recv_value',
-            'cea-addr': 'farm1.env1.bed1.camera',
+            'cea-addr': 'farm1.env1.bed1.camera1',
             'payload': {"image": camera.encode().decode('ascii')}
         }
 
